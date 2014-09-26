@@ -158,6 +158,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &200890009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 200890010}
+  m_Layer: 8
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: -1203168336, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &200890010
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 200890009}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.533358097, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 574970891}
+  m_RootOrder: 0
 --- !u!1 &374427809
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +334,7 @@ GameObject:
   - 61: {fileID: 574970888}
   - 50: {fileID: 574970887}
   - 114: {fileID: 574970892}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +403,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 200890010}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!114 &574970892
@@ -390,7 +418,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fff6a22faad7be488c2c5abdc75e203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: .100000001
+  maxSpeed: 10
+  groundRadius: .200000003
+  jumpForce: 0
+  groundObjects:
+    serializedVersion: 2
+    m_Bits: 4294967039
 --- !u!1 &1132437748
 GameObject:
   m_ObjectHideFlags: 0
