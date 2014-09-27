@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 40548cda358564f4291692590333a1a3
+guid: 703f402489638a349806458be540099b
 TextureImporter:
   fileIDToRecycleName:
-    21300000: PikeMen
+    21300000: Chest
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +26,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: 0
-    aniso: 1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

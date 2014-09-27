@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 40548cda358564f4291692590333a1a3
+guid: 860e4a84f42ae5744a550b05e7069762
 TextureImporter:
   fileIDToRecycleName:
-    21300000: PikeMen
+    21300000: Coin
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,13 +22,13 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
-    filterMode: 0
-    aniso: 1
+    filterMode: -1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
