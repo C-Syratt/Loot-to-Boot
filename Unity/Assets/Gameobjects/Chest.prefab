@@ -9,6 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
+  - 61: {fileID: 6100000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -23,11 +25,35 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0116821378, y: -2.12629175, z: 0}
+  m_LocalPosition: {x: .0116821472, y: -2.17082143, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6100000
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: .639999986}
+  m_Center: {x: 0, y: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28dbf9b1af51c66489f0a8220c1122eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loot:
+  - {fileID: 100000, guid: 652201736fe8bc04fbc2ff9fe2ffe9cf, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
