@@ -4,7 +4,7 @@ using System.Collections;
 public class menuCam : MonoBehaviour {
 
 	[SerializeField]float camSpeed;
-
+	[SerializeField]AudioClip music;
 
 	Vector3 newPos;
 	Vector3 mainPos = new Vector3(0,0,-10);
@@ -15,6 +15,8 @@ public class menuCam : MonoBehaviour {
 	{
 		// so the camera does not move to (0,0,0) before a button is pressed
 		newPos = mainPos;
+		// play music bitch
+		AudioSource.PlayClipAtPoint (music, transform.position);
 	}
 	
 	void Update () 
