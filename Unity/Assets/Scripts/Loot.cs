@@ -4,9 +4,9 @@ using System.Collections;
 public class Loot : MonoBehaviour {
 
 	bool grounded = false;
-	[SerializeField] [Range(0, 10)] float maxHeight = 4;
-	[SerializeField] [Range(0, 10)] float minHeight = 2;
-	[SerializeField] [Range(0, 10)] float distanceX = 2;
+	[SerializeField] [Range(0, 10)] float maxHeight = 4f;
+	[SerializeField] [Range(0, 10)] float minHeight = 2f;
+	[SerializeField] [Range(0, 10)] float distanceX = 2f;
 
 	Vector3 vel = new Vector3(2, 2, 0);
 	Vector3 grav = new Vector3(0, -2, 0);
@@ -14,9 +14,18 @@ public class Loot : MonoBehaviour {
 	[SerializeField] LayerMask groundObjects;
 	Transform groundCheck;
 
+	LootColour.Colour colour;
+
 	void Start(){
-		vel = new Vector3(Random.Range(-distanceX, distanceX), Random.Range(minHeight, maxHeight), 0f);
-		grav = new Vector3(0f, Random.Range(-minHeight, -maxHeight), 0f);
+		if(GameManager.gm.CanSpawnLoot(gameObject)){
+			vel = new Vector3(Random.Range(-distanceX, distanceX), Random.Range(minHeight, maxHeight), 0f);
+			grav = new Vector3(0f, Random.Range(-minHeight, -maxHeight), 0f);
+
+			//Add 1 to the lootcount in the GameMananger
+			GameManager.gm.AddLoot(gameObject);
+
+			colour = LootColour.Colour.BLACK;
+		}
 	}
 	
 	void FixedUpdate () {
@@ -25,5 +34,9 @@ public class Loot : MonoBehaviour {
 			transform.position = transform.position + vel * Time.deltaTime;
 			vel = vel + grav * Time.deltaTime;
 		}
+	}
+
+	void OnTriggerEnter2D(Collider2D col){
+		GameManager.gm.AddScore(gameObject, colour);
 	}
 }
