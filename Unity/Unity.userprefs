@@ -1,11 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AI\AICollect.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerController.cs">
     <Files>
-      <File FileName="Assets\Scripts\Loot.cs" Line="25" Column="37" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="30" Column="16" />
-      <File FileName="Assets\Scripts\AI\AICollect.cs" Line="6" Column="24" />
-      <File FileName="Assets\Scripts\AI\AIBehaviour.cs" Line="14" Column="3" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="14" Column="43" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="92" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

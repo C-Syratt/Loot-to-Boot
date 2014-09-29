@@ -5,9 +5,21 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour {
 
 	public static GameManager gm;
+	
+	[SerializeField] public GameObject goblin;
+	[SerializeField] public bool gotGoblin = false;
+	[SerializeField] public bool gotSpeed = false;
+
+	public enum GameState
+	{
+		Game,
+		Store
+	}
+
+	public GameState gs;
 
 	//Score Variables
-	private int score = 0;
+	public int score = 0;
 	[SerializeField] private TextMesh scoreText;
 
 	//Loot Variables
@@ -19,6 +31,12 @@ public class GameManager : MonoBehaviour {
 
 	void Start(){
 		gm = this;
+		gs = GameState.Game;
+	}
+
+	public void OpenStore()
+	{
+		gs = GameState.Store;
 	}
 
 	// Uses the colour of the loot to determine how many points are given
@@ -29,6 +47,11 @@ public class GameManager : MonoBehaviour {
 		scoreText.text = "Score: " + score;
 		RemoveLoot(go);
 		Destroy(go);
+	}
+
+	public void BuyUpgrade(int cost){
+		score -= cost;
+		scoreText.text = "Score: " + score;
 	}
 
 	public void AddLoot(GameObject go){ 
@@ -79,5 +102,18 @@ public class GameManager : MonoBehaviour {
 
 		return false;
 	}
+
+	public void BoughtGoblin()
+	{
+		gotGoblin = true;
+		goblin.SetActive (true);
+	}
+
+	public void BoughtSpd()
+	{
+		gotSpeed = true;	
+	}
+
+
 
 }

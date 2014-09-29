@@ -2,13 +2,16 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
-	
+
+	public GameManager gm;
 	[SerializeField] float maxSpeed = 10f;
 	bool jump = false;
 	bool grounded = false;
 	[SerializeField] float groundRadius = 0.2f;
 	[SerializeField] float jumpForce = 0f;
-	
+
+	[SerializeField] public float spdMulti = 1f;
+
 	Transform groundCheck;
 	[SerializeField] LayerMask groundObjects;
 	Animator anim;
@@ -18,10 +21,17 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	void Update(){
-		if(grounded && Input.GetButtonDown("Jump"))
-			jump = true;
-		
-		rigidbody2D.velocity = new Vector2(Input.GetAxis("Horizontal") * maxSpeed, rigidbody2D.velocity.y);
+		if (gm.gs == GameManager.GameState.Game) 
+		{
+			if (grounded && Input.GetButtonDown ("Jump"))
+				jump = true;
+
+			rigidbody2D.velocity = new Vector2 (Input.GetAxis ("Horizontal") * (maxSpeed * spdMulti), rigidbody2D.velocity.y);
+		}
+		if (Input.GetKeyDown (KeyCode.G)) 
+		{
+			gm.gs = GameManager.GameState.Store;
+		}
 	}
 	
 	void FixedUpdate () {
@@ -32,6 +42,11 @@ public class PlayerController : MonoBehaviour {
 			jump = false;
 		}
 		
+	}
+
+	public void BoughtSpeed()
+	{
+		spdMulti = 1.5f;		
 	}
 	
 }
