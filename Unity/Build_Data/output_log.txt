@@ -1,0 +1,26 @@
+Initialize engine version: 4.5.2f1 (9abb1b59b47c)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 560  (ID=0x1201)
+    Vendor:   NVIDIA
+    VRAM:     978 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Users\Corey\Documents\Loot-to-Boot\Unity\Build_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Users\Corey\Documents\Loot-to-Boot\Unity\Build_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Users\Corey\Documents\Loot-to-Boot\Unity\Build_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Users\Corey\Documents\Loot-to-Boot\Unity\Build_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+- Completed reload, in  0.067 seconds
+desktop: 1920x1080 60Hz; virtual: 3286x1080 at -1366,0
+<RI> Initializing input.
+<RI> Input initialized.
+UnloadTime: 0.505913 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 226.
+Total: 5.541796 ms (FindLiveObjects: 0.016739 ms CreateObjectMapping: 0.012709 ms MarkObjects: 0.099508 ms  DeleteObjects: 4.656758 ms)
+
+21
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
