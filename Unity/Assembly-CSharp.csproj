@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\AI\AIBehaviour.cs" />
      <Compile Include="Assets\Scripts\AI\AICollect.cs" />
      <Compile Include="Assets\Scripts\Chest.cs" />
+     <Compile Include="Assets\Scripts\DeadZone.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Loot.cs" />
      <Compile Include="Assets\Scripts\LootColour.cs" />

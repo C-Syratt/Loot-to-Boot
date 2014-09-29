@@ -52,9 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de14ffb619f84e48b6d7f4f97788a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeight: 3
+  maxHeight: 4.80000019
   minHeight: 2
-  distanceX: 2.5
+  distanceX: 2.0999999
   groundRadius: .200000003
   groundObjects:
     serializedVersion: 2
