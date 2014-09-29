@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Store &amp; Buttons\ButtonManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerAim.cs">
     <Files>
-      <File FileName="Assets\Scripts\Store &amp; Buttons\ButtonManager.cs" Line="28" Column="17" />
-      <File FileName="Assets\Scripts\menuCam.cs" Line="31" Column="19" />
+      <File FileName="Assets\Scripts\Chest.cs" Line="17" Column="28" />
+      <File FileName="Assets\Scripts\PlayerAim.cs" Line="36" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
