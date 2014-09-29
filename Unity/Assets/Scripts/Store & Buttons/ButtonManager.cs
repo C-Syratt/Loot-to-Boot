@@ -25,6 +25,10 @@ public class ButtonManager : MonoBehaviour {
 			Application.LoadLevel(1);
 			break;
 
+		case "Controls":
+			cam.SendMessage("moveCam", buttonName);
+			break;
+
 		case "Credits":
 			cam.SendMessage("moveCam", buttonName);
 			break;
@@ -34,7 +38,7 @@ public class ButtonManager : MonoBehaviour {
 			Application.Quit();
 			break;
 
-		// Credits Screen buttons
+		// Credits/Controls Screen buttons
 		case "Back":
 			cam.SendMessage("moveCam", buttonName);
 			break;

@@ -8,8 +8,8 @@ public class menuCam : MonoBehaviour {
 
 	Vector3 newPos;
 	Vector3 mainPos = new Vector3(0,0,-10);
+	Vector3 controlPos = new Vector3(-15,0,-10);
 	Vector3 creditPos = new Vector3(15,0,-10);
-
 
 	void Start () 
 	{
@@ -28,6 +28,10 @@ public class menuCam : MonoBehaviour {
 	{
 		switch (buttonPressed) 
 		{
+		case "Controls":
+			newPos = controlPos;
+			break;
+
 		case "Credits":
 			newPos = creditPos;
 			break;
