@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Store &amp; Buttons\StoreButtonManager.cs" />
      <Compile Include="Assets\Scripts\gameCam.cs" />
      <Compile Include="Assets\Scripts\menuCam.cs" />
+     <Compile Include="Assets\Timer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

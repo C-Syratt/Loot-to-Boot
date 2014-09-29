@@ -33,14 +33,17 @@ public class PlayerAim : MonoBehaviour {
 		{
 			fireCounter = 0; // reset counter
 			BulletFired();	// run func for audio and shot count
-
-			// spawn bullet at end of barrel(empty object)sddfsadf
+			// spawn bullet at end of barrel(empty object)
 			GameObject newBul = (GameObject)Instantiate(bulletPre, bulletSpawnLoc.position, transform.rotation);
 			// Make the bullet move in direction it is facing
 			newBul.rigidbody2D.AddRelativeForce(Vector2.up * bullImpulse, ForceMode2D.Impulse);
 		}
 	}
-	
+
+	public void ReduceCoolDown()
+	{
+		fireCool -= 0.2f;
+	}
 	
 	void BulletFired()
 	{

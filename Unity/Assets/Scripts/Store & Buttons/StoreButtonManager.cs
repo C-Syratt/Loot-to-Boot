@@ -4,9 +4,10 @@ using System.Collections;
 public class StoreButtonManager : MonoBehaviour {
 	
 	[SerializeField]GameObject cam;
-	[SerializeField]GameObject buyGob;
-	[SerializeField]GameObject buySpd;
 	string buttonName;
+
+	[SerializeField]float cost;
+	[SerializeField]float coolCostMulti = 1f;
 
 	public GameManager gm;
 	public PlayerController pc;
@@ -27,20 +28,44 @@ public class StoreButtonManager : MonoBehaviour {
 		{
 			// Store buttons
 		case "Buy Goblin":
-			if(gm.score >= 20)
+			cost = 20;
+			if(gm.score >= cost)
 			{
-				gm.SendMessage("BuyUpgrade", 20);
+				gm.SendMessage("BuyUpgrade", cost);
 				gm.SendMessage("BoughtGoblin");
-				buyGob.SetActive(false);
+				gameObject.SetActive(false);
 			}
 			break;
 
 		case "Buy Speed":
-			if(gm.score >= 10)
+			cost  = 10;
+			if(gm.score >= cost)
 			{
-				gm.SendMessage("BuyUpgrade", 10);
+				gm.SendMessage("BuyUpgrade", cost);
 				pc.SendMessage("BoughtSpeed");
-				buySpd.SetActive(false);
+				gameObject.SetActive(false);
+			}
+			break;
+
+		case "Buy Bow":
+			cost = 70;
+			if(gm.score >= cost)
+			{
+				gm.SendMessage("BuyUpgrade", cost);
+				pc.SendMessage("BoughtBow");
+				gameObject.SetActive(false);
+			}
+			break;
+
+		case "Buy CoolDown":
+			print ("Activate");
+			cost = 20;
+			cost = cost * coolCostMulti;
+			if(gm.score >= cost)
+			{
+				gm.SendMessage("BuyUpgrade", cost);
+				pc.BroadcastMessage("ReduceCoolDown");
+				coolCostMulti += 1f;
 			}
 			break;
 

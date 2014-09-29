@@ -48,5 +48,22 @@ public class PlayerController : MonoBehaviour {
 	{
 		spdMulti = 1.5f;		
 	}
+
+	public void BoughtBow()
+	{
+		foreach(Transform child in transform)
+		{
+			if(child.name == "Weapon")
+			{
+				child.gameObject.SetActive(true);
+			}
+		}
+	}
+//
+//	public void BoughtCoolDown()
+//	{
+//		SendMessage("ReduceCoolDown");
+//	}
+
 	
 }
