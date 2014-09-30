@@ -18,7 +18,14 @@ public class GameManager : MonoBehaviour {
 		Store
 	}
 
+	public enum WeaponType{
+		Bow,
+		Sword,
+		Magic
+	}
+
 	public GameState gs;
+	public WeaponType currentWeapon;
 
 	//Score Variables
 	public int score = 0;
@@ -45,7 +52,10 @@ public class GameManager : MonoBehaviour {
 	// Then update the test, removes 1 from the loot count and 
 	// destroys the loot
 	public void AddScore(GameObject go, LootColour.Colour colour){
-		score += GetColourScore(colour);
+		if(currentWeapon == WeaponType.Magic)
+			score += GetColourScore(colour) * 2;
+		else
+			score += GetColourScore(colour);
 		scoreText.text = "Score: " + score;
 		RemoveLoot(go);
 		Destroy(go);

@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Loot.cs" />
      <Compile Include="Assets\Scripts\LootColour.cs" />
+     <Compile Include="Assets\Scripts\Magic.cs" />
      <Compile Include="Assets\Scripts\PlayerAim.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Store &amp; Buttons\ButtonManager.cs" />
