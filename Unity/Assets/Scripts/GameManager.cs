@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] public bool gotGoblin = false;
 	[SerializeField] public bool gotSpeed = false;
 
+	public bool[] weaponStatus;
+
 	public enum GameState
 	{
 		Game,
