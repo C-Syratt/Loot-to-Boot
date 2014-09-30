@@ -183,7 +183,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 82940255}
   - 212: {fileID: 82940257}
-  - 61: {fileID: 82940256}
   m_Layer: 0
   m_Name: SwordsMen
   m_TagString: Untagged
@@ -197,23 +196,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 82940254}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -.382683486, w: .923879564}
   m_LocalPosition: {x: .389292717, y: .229479074, z: -.920000136}
   m_LocalScale: {x: 3.23958349, y: 3.23958373, z: 3.23958373}
   m_Children: []
   m_Father: {fileID: 1818694258}
   m_RootOrder: 0
---- !u!61 &82940256
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 82940254}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: .319999993, y: .319999993}
-  m_Center: {x: 0, y: 5.96046448e-08}
 --- !u!212 &82940257
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1210,7 +1198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1189383461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1224,8 +1212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 827547715}
   weaponSpawnPoint: {fileID: 876060910}
-  bulletPre: {fileID: 100000, guid: 7870de1008206e54ca11e8cc809f6dd0, type: 2}
-  bulletImpulse: 10000
+  bulletPre: {fileID: 100000, guid: 838b3078aeda97645b182cd737c03961, type: 2}
+  bulletImpulse: 257.890015
 --- !u!61 &1189383462
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1322,7 +1310,7 @@ MonoBehaviour:
   goblin: {fileID: 1909620732}
   gotGoblin: 0
   gotSpeed: 0
-  weaponStatus: 0100000000
+  weaponStatus: 0101000000
   gs: 0
   score: 0
   scoreText: {fileID: 1479911683}
@@ -2043,6 +2031,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1818694258}
+  - 61: {fileID: 1818694259}
+  - 114: {fileID: 1818694260}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -2057,12 +2047,34 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1818694257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.704826355, y: .077858448, z: 0}
+  m_LocalPosition: {x: -.404787689, y: .0494337082, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 82940255}
   m_Father: {fileID: 574970891}
   m_RootOrder: 0
+--- !u!61 &1818694259
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1818694257}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .209999993, y: 1.32000005}
+  m_Center: {x: .379999995, y: .170000002}
+--- !u!114 &1818694260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1818694257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afb088c6942533429c5ccc154ba3a3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1909620732
 GameObject:
   m_ObjectHideFlags: 0
