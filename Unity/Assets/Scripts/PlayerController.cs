@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour {
 
 			rigidbody2D.velocity = new Vector2 (Input.GetAxis ("Horizontal") * (maxSpeed * spdMulti), rigidbody2D.velocity.y);
 		}
-		if (Input.GetKeyDown (KeyCode.G)) 
+		if (Input.GetKeyDown (KeyCode.G) && GameManager.gm.allowedStore) 
 		{
 			gm.gs = GameManager.GameState.Store;
 		}

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] public GameObject goblinShter;
 	[SerializeField] public bool gotGoblinShter = false;
 	[SerializeField] public bool gotSpeed = false;
+	public bool allowedStore = false;
 
 	public bool[] weaponStatus;
 

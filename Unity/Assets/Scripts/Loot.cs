@@ -19,7 +19,7 @@ public class Loot : MonoBehaviour {
 	void Start(){
 		if(GameManager.gm.CanSpawnLoot(gameObject)){
 			vel = new Vector3(Random.Range(-distanceX, distanceX), Random.Range(minHeight, maxHeight), 0f);
-			grav = new Vector3(0f, Random.Range(-minHeight, -maxHeight), 0f);
+			grav = new Vector3(0f, -maxHeight * 1.5f, 0f);
 
 			//Add 1 to the lootcount in the GameMananger
 			GameManager.gm.AddLoot(gameObject);
