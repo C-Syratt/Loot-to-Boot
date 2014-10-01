@@ -24,7 +24,7 @@ public class Chest : MonoBehaviour {
 		if (col.gameObject.tag == "Projectile")
 		{
 			// ALL THE LOOT!!!
-			for(int i = 0; i < 20; i++){
+			for(int i = 0; i < 10; i++){
 				Instantiate(loot[Random.Range(0, loot.Length)], transform.position + transform.up, Quaternion.identity);
 				Instantiate(loot[Random.Range(0, particles.Length)], transform.position, Quaternion.identity);
 			}
@@ -41,7 +41,7 @@ public class Chest : MonoBehaviour {
 		GameManager.gm.PlaySound(sounds);
 		Particles();
 		if(col.tag == "Sword"){
-			for(int i = 0; i < 10; i++){
+			for(int i = 0; i < 20; i++){
 				Instantiate(loot[Random.Range(0, loot.Length)], transform.position + transform.up, Quaternion.identity);
 			}
 		}

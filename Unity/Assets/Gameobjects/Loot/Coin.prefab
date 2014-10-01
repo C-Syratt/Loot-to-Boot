@@ -54,7 +54,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHeight: 4.80000019
   minHeight: 2
-  distanceX: 2.0999999
+  distanceX: 4.19999981
+  sounds: []
   groundRadius: .200000003
   groundObjects:
     serializedVersion: 2

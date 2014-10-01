@@ -27,7 +27,10 @@ public class PlayerAim : MonoBehaviour {
 	
 	void FixedUpdate()
 	{
-		fireCounter += Time.deltaTime;
+		float mult = 1;
+		if(GameManager.gm.playerStats.hasWeaponPowerup[0])
+			mult = 2;
+		fireCounter += Time.deltaTime * mult;
 		// Shoot if shooting cooldown allows
 		if(Input.GetKey(KeyCode.Mouse0) && fireCounter >= fireCool)
 		{

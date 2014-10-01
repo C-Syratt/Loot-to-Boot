@@ -8,13 +8,6 @@ public class StoreButtonManager : MonoBehaviour {
 	string buttonName;
 
 	[SerializeField]int cost;
-	[SerializeField]float costMulti = 1f;
-
-	PlayerController pc;
-
-	void Start(){
-		pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-	}
 
 	void OnMouseDown()
 	{
@@ -28,91 +21,111 @@ public class StoreButtonManager : MonoBehaviour {
 	// I am running the names through a switch statement to easily see what each button does
 	void ButtonPressed(string buttonName)
 	{
-		switch (buttonName) 
-		{
-			// Once off Upgrades
-		case "Buy Goblin":
-			print(GameManager.gm.score);
-			if(GameManager.gm.score >= cost)
+		// Holy fuck this code haha lucky it's a prototype
+
+		if(GameManager.gm.score >= cost || cost == 0){
+			switch (buttonName) 
 			{
-				GameManager.gm.BuyUpgrade(cost);
-				GameManager.gm.BoughtGoblin();
+
+			// Goblins
+			case "Buy Goblin":
+
+				if(!GameManager.gm.playerStats.hasGoblin[0])
+				{
+					GameManager.gm.BuyUpgrade(cost);
+					GameManager.gm.BoughtGoblin();
+					gameObject.SetActive(false);
+				}
+				break;
+
+			case "Buy GoblinShooter":
+
+				if(!GameManager.gm.playerStats.hasGoblin[1])
+				{
+					GameManager.gm.BuyUpgrade(cost);
+					GameManager.gm.BoughtGoblinShter();
+					gameObject.SetActive(false);
+				}
+				break;
+
+			case "Buy GoblinMelee":
+				if(!GameManager.gm.playerStats.hasGoblin[2])
+				{
+					GameManager.gm.BuyUpgrade(cost);
+					GameManager.gm.BoughtGoblinMelee();
+					gameObject.SetActive(false);
+				}
+				break;
+			
+				// Loot Upgrades
+			case "Buy Max Loot1":
+				GameManager.gm.IncreseMaxLoot();
+				GameManager.gm.score -= cost;
 				gameObject.SetActive(false);
-			}
-			break;
+				break;
 
-		case "Buy GoblinShooter":
-			print(GameManager.gm.score);
-			if(GameManager.gm.score >= cost)
-			{
-				GameManager.gm.BuyUpgrade(cost);
-				GameManager.gm.BoughtGoblinShter();
+			case "Buy Max Loot2":
+				GameManager.gm.IncreseMaxLoot();
+				GameManager.gm.score -= cost;
 				gameObject.SetActive(false);
-			}
-			break;
+				break;
 
-		case "Buy Speed":
-			if(GameManager.gm.score >= cost)
-			{
-				GameManager.gm.BuyUpgrade(cost);
-				pc.SendMessage("BoughtSpeed");
+			case "Buy Max Loot3":
+				GameManager.gm.IncreseMaxLoot();
+				GameManager.gm.score -= cost;
 				gameObject.SetActive(false);
-			}
-			break;
-
-		case "Buy Bow":
-			if(GameManager.gm.score >= cost)
-			{
-				GameManager.gm.BuyUpgrade(cost);
-				pc.SendMessage("BoughtBow");
+				break;
+						
+			// Weapons and upgrades
+			case "Buy Bow":
+				GameManager.gm.score -= cost;
+				GameManager.gm.weaponStatus[0] = true;
 				gameObject.SetActive(false);
-			}
-			break;
-		
-			// Stacking Upgrades
-		case "Buy Max Loot":
-			cost = (int) (cost * costMulti);
-			if(GameManager.gm.score >= cost)
-			{
-				GameManager.gm.BuyUpgrade(cost);
-				GameManager.gm.SendMessage("IncreseMaxLoot");
-				costMulti++;
-			}
-			break;
-					
-		case "Buy CoolDown":
-			cost = (int) (cost * costMulti);
-			if(GameManager.gm.score >= cost)
-			{
-				GameManager.gm.BuyUpgrade(cost);
-				pc.BoughtSpeed;
-				costMulti++;
-			}
-			break;
-			// !name correctly!
-		case "Buy SwordSpeed":
-			cost = (int) (cost * costMulti);
-			if(GameManager.gm.score >= cost)
-			{
-				GameManager.gm.BuyUpgrade(cost);
-				GameManager.gm.IncreaseSwingSpeed();
-				costMulti++;
-			}
-			break;
-		
+				break;
+				
+			case "Buy Sword":
+				GameManager.gm.score -= cost;
+				GameManager.gm.weaponStatus[1] = true;
+				gameObject.SetActive(false);
+				break;
+				
+			case "Buy Magic":
+				GameManager.gm.score -= cost;
+				GameManager.gm.weaponStatus[2] = true;
+				gameObject.SetActive(false);
+				break;
 
-			// Navigation buttons
-		case "Weapons":
-			cam.SendMessage("moveCam", buttonName);
-			break;
+			case "Buy BowUpgrade":
+				GameManager.gm.playerStats.hasWeaponPowerup[0] = true;
+				GameManager.gm.score -= cost;
+				gameObject.SetActive(false);
+				break;
 
-		case "Upgrades":
-			cam.SendMessage("moveCam", buttonName);
-			break;
+			case "Buy SwordUpgrade":
+				GameManager.gm.playerStats.hasWeaponPowerup[1] = true;
+				GameManager.gm.score -= cost;
+				gameObject.SetActive(false);
+				break;
 
-		case "Back":
-			cam.SendMessage("moveCam", buttonName);
-			break;
+			case "Buy MagicUpgrade":
+				GameManager.gm.playerStats.hasWeaponPowerup[2] = true;
+				GameManager.gm.score -= cost;
+				gameObject.SetActive(false);
+				break;
+			
+				// Navigation buttons
+			case "Weapons":
+				cam.SendMessage("moveCam", buttonName);
+				break;
+
+			case "Upgrades":
+				cam.SendMessage("moveCam", buttonName);
+				break;
+
+			case "Back":
+				cam.SendMessage("moveCam", buttonName);
+				break;
+			}
 		}
 	}
 }

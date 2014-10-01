@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHeight: 10
   minHeight: 7.19999981
-  distanceX: 2.0999999
+  distanceX: 4.19999981
   sounds:
   - {fileID: 8300000, guid: 068108242f1e0a04d8199f41291404be, type: 3}
   - {fileID: 8300000, guid: 5f0c31870283e4247854f2f879f92aba, type: 3}

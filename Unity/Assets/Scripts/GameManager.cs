@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] public bool gotGoblin = false;
 	[SerializeField] public GameObject goblinShter;
 	[SerializeField] public bool gotGoblinShter = false;
+	[SerializeField] public GameObject goblinMelee;
+	[SerializeField] public bool gotGoblinMelee = false;
 	[SerializeField] public bool gotSpeed = false;
 	public bool allowedStore = false;
 
@@ -46,9 +48,13 @@ public class GameManager : MonoBehaviour {
 	//Keep them in a gameObject for AI
 	public List<GameObject> lootGameObjects;
 
+	// Player Stats
+	public PlayerStats playerStats;
+
 	void Start(){
 		gm = this;
 		gs = GameState.Game;
+		playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
 	}
 
 	public void OpenStore()
@@ -135,6 +141,12 @@ public class GameManager : MonoBehaviour {
 		goblinShter.SetActive (true);
 	}
 
+	public void BoughtGoblinMelee()
+	{
+		gotGoblinMelee = true;
+		goblinMelee.SetActive (true);
+	}
+
 
 	public void BoughtSpd()
 	{
@@ -144,6 +156,8 @@ public class GameManager : MonoBehaviour {
 	public void IncreseMaxLoot()
 	{
 		maxAmountOfLoot *= 2;
+		lootText.text = "Loot: " + amountOfLoot + " / " + maxAmountOfLoot;
+
 	}
 
 	public void PlaySound(AudioClip[] sounds){

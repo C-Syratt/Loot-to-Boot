@@ -8,6 +8,9 @@ public class AICollect : AIBehaviour {
 	void Start () {
 		type = AIType.COLLECT;
 		Physics2D.IgnoreCollision(GameObject.FindGameObjectWithTag("Player").collider2D, collider2D);
+		foreach(GameObject g in GameObject.FindGameObjectsWithTag("Collector")){
+			Physics2D.IgnoreCollision(collider2D, g.collider2D);
+		}
 	}
 
 	void Update () {
