@@ -79,13 +79,23 @@ public class StoreButtonManager : MonoBehaviour {
 				costMulti++;
 			}
 			break;
-					///dhskgsdvgjvz dfgkasdbrfgadfs
+					
 		case "Buy CoolDown":
 			cost = (int) (cost * costMulti);
 			if(GameManager.gm.score >= cost)
 			{
 				GameManager.gm.BuyUpgrade(cost);
-				pc.BroadcastMessage("ReduceCoolDown");
+				pc.BoughtSpeed;
+				costMulti++;
+			}
+			break;
+			// !name correctly!
+		case "Buy SwordSpeed":
+			cost = (int) (cost * costMulti);
+			if(GameManager.gm.score >= cost)
+			{
+				GameManager.gm.BuyUpgrade(cost);
+				GameManager.gm.IncreaseSwingSpeed();
 				costMulti++;
 			}
 			break;

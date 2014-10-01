@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] public bool gotSpeed = false;
 	public bool allowedStore = false;
 
+	[SerializeField] public float swingSpeed = 1f;
+	
 	public bool[] weaponStatus;
 
 	public enum GameState
@@ -148,4 +150,11 @@ public class GameManager : MonoBehaviour {
 		AudioSource.PlayClipAtPoint(sounds[Random.Range(0, sounds.Length)], transform.position);
 	}
 
+	public void IncreaseSwingSpeed()
+	{
+		swingSpeed++;
+	}
+	
+	
+	
 }
