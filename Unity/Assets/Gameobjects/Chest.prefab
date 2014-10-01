@@ -77,6 +77,10 @@ MonoBehaviour:
   - {fileID: 100000, guid: 8e1dcf1924b1945fcaab73df0affd2ab, type: 2}
   - {fileID: 100000, guid: 624359039ddfc43a6b27f8c6c1cc5499, type: 2}
   - {fileID: 100000, guid: 4f2b448ece6bb4940be1ce4a87b8e110, type: 2}
+  sounds:
+  - {fileID: 8300000, guid: 28f694d8d4f753c4390a23f1543dd269, type: 3}
+  - {fileID: 8300000, guid: d16c68df8159437418abd6ba10fe9463, type: 3}
+  - {fileID: 8300000, guid: 0a7c73c858fc20f45b7f8f70f23428a1, type: 3}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

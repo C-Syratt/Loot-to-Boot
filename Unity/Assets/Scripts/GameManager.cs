@@ -144,4 +144,8 @@ public class GameManager : MonoBehaviour {
 		maxAmountOfLoot *= 2;
 	}
 
+	public void PlaySound(AudioClip[] sounds){
+		AudioSource.PlayClipAtPoint(sounds[Random.Range(0, sounds.Length)], transform.position);
+	}
+
 }

@@ -5,6 +5,7 @@ public class Chest : MonoBehaviour {
 
 	[SerializeField] GameObject[] loot;
 	[SerializeField] GameObject[] particles;
+	[SerializeField] AudioClip[] sounds;
 
 	Animator anim;
 
@@ -14,6 +15,7 @@ public class Chest : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col){
 		anim.SetBool("Open", true);
+		GameManager.gm.PlaySound(sounds);
 		Particles();
 		if(col.gameObject.tag == "Player"){
 			Instantiate(loot[Random.Range(0, loot.Length)], transform.position + transform.up, Quaternion.identity);
@@ -36,6 +38,7 @@ public class Chest : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col){
 		anim.SetBool("Open", true);
+		GameManager.gm.PlaySound(sounds);
 		Particles();
 		if(col.tag == "Sword"){
 			for(int i = 0; i < 10; i++){

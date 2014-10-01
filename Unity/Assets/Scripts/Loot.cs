@@ -8,6 +8,8 @@ public class Loot : MonoBehaviour {
 	[SerializeField] [Range(0, 10)] float minHeight = 2f;
 	[SerializeField] [Range(0, 10)] float distanceX = 2f;
 
+	[SerializeField] AudioClip[] sounds;
+
 	Vector3 vel = new Vector3(2, 2, 0);
 	Vector3 grav = new Vector3(0, -2, 0);
 	[SerializeField] float groundRadius = 0.2f;
@@ -42,7 +44,9 @@ public class Loot : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
-		if(col.tag == "Player" || col.tag == "Collector" || col.tag == "Fire")
+		if(col.tag == "Player" || col.tag == "Collector" || col.tag == "Fire"){
 			GameManager.gm.AddScore(gameObject, colour);
+			GameManager.gm.PlaySound(sounds);
+		}
 	}
 }

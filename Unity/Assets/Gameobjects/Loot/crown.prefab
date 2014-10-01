@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.89579129, y: -.58496654, z: 0}
+  m_LocalPosition: {x: -2.01300693, y: -4.46977568, z: 0}
   m_LocalScale: {x: 1.96527982, y: 1.96527982, z: 1.96527982}
   m_Children: []
   m_Father: {fileID: 0}
@@ -39,8 +39,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: .319999993, y: .159999996}
-  m_Center: {x: 0, y: -.0700000003}
+  m_Size: {x: .319999993, y: .340000004}
+  m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,6 +55,10 @@ MonoBehaviour:
   maxHeight: 10
   minHeight: 7.19999981
   distanceX: 2.0999999
+  sounds:
+  - {fileID: 8300000, guid: 068108242f1e0a04d8199f41291404be, type: 3}
+  - {fileID: 8300000, guid: 5f0c31870283e4247854f2f879f92aba, type: 3}
+  - {fileID: 8300000, guid: cc3dde755e40a6947834dc990f0054f4, type: 3}
   groundRadius: .200000003
   groundObjects:
     serializedVersion: 2
