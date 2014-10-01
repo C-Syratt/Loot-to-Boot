@@ -9,11 +9,11 @@ public class Chest : MonoBehaviour {
 		if(col.gameObject.tag == "Player"){
 			Instantiate(loot[Random.Range(0, loot.Length)], transform.position, Quaternion.identity);
 		}
-		if (col.gameObject.tag == "Projectile") 
+		if (col.gameObject.tag == "Projectile")
 		{
-			// spawn two sets of loot then Destroy Projectile
-			Instantiate(loot[Random.Range(0, loot.Length)], transform.position, Quaternion.identity);
-			Instantiate(loot[Random.Range(0, loot.Length)], transform.position, Quaternion.identity);
+			// ALL THE LOOT!!!
+			for(int i = 0; i < 20; i++)
+				Instantiate(loot[Random.Range(0, loot.Length)], transform.position, Quaternion.identity);
 			Destroy(col.gameObject);
 		}
 	}

@@ -12,10 +12,10 @@ public class WeaponSwitch : MonoBehaviour {
 				SetActiveWeapon(i + 1);
 		}
 	}
-
+	// shit and stuff
 	private void SetActiveWeapon(int weaponIndex){
 		currentWeapon = weaponIndex;
-		GameManager.gm.currentWeapon = (GameManager.WeaponType)(currentWeapon - 1);
+		GameManager.gm.currentWeapon = (GameManager.WeaponType)(currentWeapon);
 		for(int i = 0; i < weapons.Length; i++){
 			if(i == (weaponIndex - 1))
 				weapons[i].SetActive(true);

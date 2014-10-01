@@ -12,8 +12,8 @@ GameObject:
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Chest
-  m_TagString: Chest
+  m_Name: Candlestick
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,8 +25,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0116821472, y: -2.17082143, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.53457332, y: -1.06145358, z: 0}
+  m_LocalScale: {x: 1.69678736, y: 1.6967864, z: 1.6967864}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -38,8 +38,8 @@ BoxCollider2D:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: .639999986, y: .639999986}
+  m_IsTrigger: 1
+  m_Size: {x: .319999993, y: .319999993}
   m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -49,15 +49,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28dbf9b1af51c66489f0a8220c1122eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 2de14ffb619f84e48b6d7f4f97788a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loot:
-  - {fileID: 100000, guid: a38bc95741956bb4bb724c30e7cb3a62, type: 2}
-  - {fileID: 100000, guid: 5c2be42c07df46b4da45533d53885c1a, type: 2}
-  - {fileID: 100000, guid: 368edfd80502afa4aa4dbaf73487cfc1, type: 2}
-  - {fileID: 100000, guid: b50f1eb1adc6f8744abfde494c87f413, type: 2}
-  - {fileID: 100000, guid: 33eba2d4274ba6049994a1ff8a43bef5, type: 2}
+  maxHeight: 4.80000019
+  minHeight: 2
+  distanceX: 2.0999999
+  groundRadius: .200000003
+  groundObjects:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 703f402489638a349806458be540099b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dbcc83df661b1314abbac2393600cb48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

@@ -27,7 +27,12 @@ public class Loot : MonoBehaviour {
 			colour = LootColour.Colour.BLACK;
 		}
 	}
-	
+
+	void Update()
+	{
+		transform.Rotate (new Vector3 (0f, Random.Range(90f, 360f) * Time.deltaTime, 0f));
+	}
+
 	void FixedUpdate () {
 		grounded = Physics2D.OverlapCircle(transform.position, groundRadius, groundObjects);
 		if(!grounded){
@@ -37,6 +42,7 @@ public class Loot : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
-		GameManager.gm.AddScore(gameObject, colour);
+		if(col.tag == "Player" || col.tag == "Collector" || col.tag == "Fire")
+			GameManager.gm.AddScore(gameObject, colour);
 	}
 }

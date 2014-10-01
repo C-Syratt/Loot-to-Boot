@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour {
 	
 	[SerializeField] public GameObject goblin;
 	[SerializeField] public bool gotGoblin = false;
+	[SerializeField] public GameObject goblinShter;
+	[SerializeField] public bool gotGoblinShter = false;
 	[SerializeField] public bool gotSpeed = false;
 
 	public bool[] weaponStatus;
@@ -15,10 +17,13 @@ public class GameManager : MonoBehaviour {
 	public enum GameState
 	{
 		Game,
-		Store
+		Store,
+		WeaponStore,
+		WUpgradeStore
 	}
 
 	public enum WeaponType{
+		None,
 		Bow,
 		Sword,
 		Magic
@@ -114,18 +119,28 @@ public class GameManager : MonoBehaviour {
 
 		return false;
 	}
-
+	// shit and stuff
 	public void BoughtGoblin()
 	{
 		gotGoblin = true;
 		goblin.SetActive (true);
 	}
 
+	public void BoughtGoblinShter()
+	{
+		gotGoblinShter = true;
+		goblinShter.SetActive (true);
+	}
+
+
 	public void BoughtSpd()
 	{
 		gotSpeed = true;	
 	}
 
-
+	public void IncreseMaxLoot()
+	{
+		maxAmountOfLoot *= 2;
+	}
 
 }

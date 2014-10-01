@@ -4,10 +4,11 @@ using System.Collections;
 public class StoreButtonManager : MonoBehaviour {
 	
 	[SerializeField]GameObject cam;
+	[SerializeField]GameObject text;
 	string buttonName;
 
 	[SerializeField]int cost;
-	[SerializeField]float coolCostMulti = 1f;
+	[SerializeField]float costMulti = 1f;
 
 	PlayerController pc;
 
@@ -29,9 +30,8 @@ public class StoreButtonManager : MonoBehaviour {
 	{
 		switch (buttonName) 
 		{
-			// Store buttons
+			// Once off Upgrades
 		case "Buy Goblin":
-			cost = 20;
 			print(GameManager.gm.score);
 			if(GameManager.gm.score >= cost)
 			{
@@ -41,8 +41,17 @@ public class StoreButtonManager : MonoBehaviour {
 			}
 			break;
 
+		case "Buy GoblinShooter":
+			print(GameManager.gm.score);
+			if(GameManager.gm.score >= cost)
+			{
+				GameManager.gm.BuyUpgrade(cost);
+				GameManager.gm.BoughtGoblinShter();
+				gameObject.SetActive(false);
+			}
+			break;
+
 		case "Buy Speed":
-			cost  = 10;
 			if(GameManager.gm.score >= cost)
 			{
 				GameManager.gm.BuyUpgrade(cost);
@@ -52,7 +61,6 @@ public class StoreButtonManager : MonoBehaviour {
 			break;
 
 		case "Buy Bow":
-			cost = 70;
 			if(GameManager.gm.score >= cost)
 			{
 				GameManager.gm.BuyUpgrade(cost);
@@ -60,17 +68,36 @@ public class StoreButtonManager : MonoBehaviour {
 				gameObject.SetActive(false);
 			}
 			break;
-
+		
+			// Stacking Upgrades
+		case "Buy Max Loot":
+			cost = (int) (cost * costMulti);
+			if(GameManager.gm.score >= cost)
+			{
+				GameManager.gm.BuyUpgrade(cost);
+				GameManager.gm.SendMessage("IncreseMaxLoot");
+				costMulti++;
+			}
+			break;
+					///dhskgsdvgjvz dfgkasdbrfgadfs
 		case "Buy CoolDown":
-			print ("Activate");
-			cost = 20;
-			cost = (int) (cost * coolCostMulti);
+			cost = (int) (cost * costMulti);
 			if(GameManager.gm.score >= cost)
 			{
 				GameManager.gm.BuyUpgrade(cost);
 				pc.BroadcastMessage("ReduceCoolDown");
-				coolCostMulti += 1f;
+				costMulti++;
 			}
+			break;
+		
+
+			// Navigation buttons
+		case "Weapons":
+			cam.SendMessage("moveCam", buttonName);
+			break;
+
+		case "Upgrades":
+			cam.SendMessage("moveCam", buttonName);
 			break;
 
 		case "Back":

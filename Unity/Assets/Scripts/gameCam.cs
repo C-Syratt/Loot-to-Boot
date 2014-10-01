@@ -10,6 +10,8 @@ public class gameCam : MonoBehaviour {
 	Vector3 newPos;
 	Vector3 gamePos = new Vector3(0,0,-10);
 	Vector3 storePos = new Vector3(20,0,-10);
+	Vector3 weaponPos = new Vector3(40,0,-10);
+	Vector3 wUpgradesPos = new Vector3(80,0,-10);
 
 	void Start () 
 	{
@@ -27,13 +29,28 @@ public class gameCam : MonoBehaviour {
 		{
 			newPos = storePos;
 		}
+		if (gm.gs == GameManager.GameState.WeaponStore) 
+		{
+			newPos = weaponPos;
+		}
+		if (gm.gs == GameManager.GameState.WUpgradeStore) 
+		{
+			newPos = wUpgradesPos;
+		}
 	}
 	
 	void moveCam(string buttonPressed)
 	{
 		switch (buttonPressed) 
 		{
-		case "Buy":
+		case "Weapons":
+			newPos = weaponPos;
+			gm.gs = GameManager.GameState.WeaponStore;
+			break;
+		
+		case "Upgrades":
+			newPos = storePos;
+			gm.gs = GameManager.GameState.Store;
 			break;
 			
 		case "Back":
